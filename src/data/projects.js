@@ -16,7 +16,7 @@ export const projects = [
     description: "Sitio web de portafolio desarrollado con Astro, Node.js y Tailwind CSS. Optimizado para SEO y rendimiento, incluye blog y sección de proyectos destacados.",
     tech: ["Astro", "Node.js", "Tailwind CSS"],
     image: "/images/Astro portafolio.png",
-    repo: "https://github.com/tuusuario/astro-portafolio",
+    repo: "https://github.com/JoakoLozano85/portafolio",
     url: null,
     tags: ["Frontend", "Static Site", "Astro","Tailwind CSS"],
     featured: true
