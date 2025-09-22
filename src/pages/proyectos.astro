@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ProyectoCard from '../components/ProyectoCard.astro';
+import Footer from '../components/Footer.astro';
+import { projects } from '../data/projects.js';
+
+// Get unique technologies for filter
+const allTechnologies = [...new Set(projects.flatMap(project => project.tech))].sort();
+---
+
+<Layout 
+  title="Proyectos - Tu Nombre" 
+  description="Explora mi portafolio de proyectos web. Desarrollos Frontend, Backend y Full Stack usando las últimas tecnologías."
+>
+  <Header />
+  <main class="pt-24">
+    <!-- Header Section -->
+    <section class="py-16 bg-gradient-to-br from-gray-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center animate-on-scroll">
+          <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Mi <span class="text-primary-600">Portafolio</span>
+          </h1>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Explora una colección de proyectos que demuestran mi experiencia en desarrollo web. 
+            Desde aplicaciones Frontend hasta soluciones Full Stack completas.
+          </p>
+          
+          <!-- Stats -->
+          <div class="flex justify-center space-x-8">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary-600">{projects.length}</div>
+              <div class="text-sm text-gray-600">Proyectos</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-secondary-600">{allTechnologies.length}</div>
+              <div class="text-sm text-gray-600">Tecnologías</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-accent-600">{projects.filter(p => p.featured).length}</div>
+              <div class="text-sm text-gray-600">Destacados</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Filters -->
+        <div class="mb-12 animate-on-scroll">
+          <h2 class="text-lg font-semibold text-gray-900 mb-4">Filtrar por tecnología:</h2>
+          <div class="flex flex-wrap gap-3">
+            <button 
+              class="filter-btn px-4 py-2 rounded-full border border-gray-300 text-gray-700 hover:border-primary-500 hover:text-primary-600 transition-all duration-200 active"
+              data-filter="all"
+            >
+              Todos
+            </button>
+            {allTechnologies.map(tech => (
+              <button 
+                class="filter-btn px-4 py-2 rounded-full border border-gray-300 text-gray-700 hover:border-primary-500 hover:text-primary-600 transition-all duration-200"
+                data-filter={tech}
+              >
+                {tech}
+              </button>
+            ))}
+          </div>
+        </div>
+        
+        <!-- Projects Grid -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div class="project-item" data-tech={JSON.stringify(project.tech)}>
+              <ProyectoCard project={project} index={index} />
+            </div>
+          ))}
+        </div>
+        
+        <!-- No Results Message -->
+        <div id="no-results" class="hidden text-center py-12">
+          <div class="text-gray-400 mb-4">
+            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.463.77-6.254 2.077C3.857 15.35 3 13.28 3 11c0-4.418 3.582-8 8-8s8 3.582 8 8c0 2.28-.857 4.35-2.746 6.077z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-600 mb-2">No se encontraron proyectos</h3>
+          <p class="text-gray-500">No hay proyectos que coincidan con el filtro seleccionado.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+    const noResults = document.getElementById('no-results');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const filter = this.getAttribute('data-filter');
+        
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active', 'bg-primary-500', 'text-white', 'border-primary-500'));
+        this.classList.add('active', 'bg-primary-500', 'text-white', 'border-primary-500');
+        
+        let visibleCount = 0;
+        
+        // Filter projects
+        projectItems.forEach(item => {
+          const projectTech = JSON.parse(item.getAttribute('data-tech') || '[]');
+          const htmlItem = item as HTMLElement;
+          if (filter === 'all' || projectTech.includes(filter)) {
+            htmlItem.style.display = 'block';
+            visibleCount++;
+          } else {
+            htmlItem.style.display = 'none';
+          }
+        });
+        
+        // Show/hide no results message
+        if (visibleCount === 0) {
+          noResults?.classList.remove('hidden');
+        } else {
+          noResults?.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .filter-btn.active {
+    @apply bg-primary-500 text-white border-primary-500;
+  }
+</style>

@@ -1,0 +1,29 @@
+{
+  "name": "portafolio-astro",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Portafolio personal desarrollado con Astro y Tailwind CSS",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "tailwindcss": "^3.4.7"
+  },
+  "keywords": [
+    "astro",
+    "portfolio",
+    "tailwindcss",
+    "javascript",
+    "web-development"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "devDependencies": {
+    "astro": "^5.13.9"
+  }
+}

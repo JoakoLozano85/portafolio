@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ProyectoCard from '../components/ProyectoCard.astro';
+import Footer from '../components/Footer.astro';
+import { projects } from '../data/projects.js';
+
+// Get featured projects for homepage
+const featuredProjects = projects.filter(project => project.featured).slice(0, 3);
+---
+
+<Layout 
+  title="Joaquin Lozano - Desarrollador Full Stack" 
+  description="Desarrollador Full Stack especializado en JavaScript, React y Node.js. Creo experiencias web modernas y funcionales."
+>
+  <Header />
+  <main>
+    <Hero />
+    
+    <!-- Featured Projects Section -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 animate-on-scroll">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Proyectos <span class="text-primary-600">destacados</span>
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Una selección de mis trabajos más recientes y significativos. Cada proyecto representa un desafío único y una oportunidad de crecimiento.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {featuredProjects.map((project, index) => (
+            <ProyectoCard project={project} index={index} />
+          ))}
+        </div>
+        
+        <div class="text-center animate-on-scroll">
+          <a 
+            href="/proyectos" 
+            class="inline-flex items-center px-8 py-4 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+          >
+            Ver todos los proyectos
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

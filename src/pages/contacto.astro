@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Contacto - Tu Nombre" 
+  description="¿Tienes un proyecto en mente? Contáctame para discutir cómo puedo ayudarte a hacer realidad tu idea."
+>
+  <Header />
+  <main class="pt-24">
+    <!-- Page Header -->
+    <section class="py-16 bg-gradient-to-br from-gray-50 to-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="animate-on-scroll">
+          <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            ¡Hablemos de tu <span class="text-primary-600">proyecto</span>!
+          </h1>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            ¿Necesitas ayuda con tu próximo proyecto web? Estoy aquí para ayudarte a convertir tus ideas en realidad digital.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Form Section -->
+    <ContactForm />
+    
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 animate-on-scroll">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Preguntas frecuentes</h2>
+          <p class="text-xl text-gray-600">Respuestas a las consultas más comunes</p>
+        </div>
+        
+        <div class="space-y-6">
+          <!-- FAQ Item 1 -->
+          <div class="animate-on-scroll bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Cuánto tiempo toma desarrollar un proyecto?</h3>
+            <p class="text-gray-600">
+              El tiempo varía según la complejidad del proyecto. Una landing page puede tomar 1-2 semanas, 
+              mientras que una aplicación web completa puede requerir 2-3 meses. Te daré una estimación 
+              detallada después de nuestra primera conversación.
+            </p>
+          </div>
+          
+          <!-- FAQ Item 2 -->
+          <div class="animate-on-scroll bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Qué tecnologías utilizas?</h3>
+            <p class="text-gray-600">
+              Me especializo en JavaScript moderno, React, Flutter, Node.js, y bases de datos como MySQL y PostgreSQL. 
+              También trabajo con frameworks como Astro y herramientas de deployment como Vercel y Netlify.
+            </p>
+          </div>
+          
+          <!-- FAQ Item 3 -->
+          <div class="animate-on-scroll bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Ofreces mantenimiento posterior?</h3>
+            <p class="text-gray-600">
+              Sí, ofrezco planes de mantenimiento que incluyen actualizaciones de seguridad, mejoras de rendimiento, 
+              y soporte técnico continuo.
+            </p>
+          </div>
+          
+          <!-- FAQ Item 4 -->
+           <div class="animate-on-scroll bg-white rounded-lg p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">¿Ofreces soporte técnico?</h3>
+            <p class="text-gray-600">
+              Sí, ofrezco soporte técnico tanto en hardware como en software. Tengo conocimientos para ayudarte a resolver problemas, realizar configuraciones y brindar asesoría personalizada según tus necesidades.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,196 @@
+---
+---
+
+<section class="py-16 lg:py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 animate-on-scroll">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        ¿Tienes un proyecto en <span class="text-primary-600">mente</span>?
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Estoy siempre interesado en nuevos desafíos. Hablemos sobre cómo puedo ayudarte a hacer realidad tu idea.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Contact Form -->
+      <div class="animate-on-scroll">
+        <form id="contact-form" class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-900 mb-2">
+              Nombre completo *
+            </label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              required 
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+              placeholder="Tu nombre"
+            />
+            <span class="error-message text-red-500 text-sm hidden"></span>
+          </div>
+          
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-900 mb-2">
+              Email *
+            </label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+              placeholder="tu@email.com"
+            />
+            <span class="error-message text-red-500 text-sm hidden"></span>
+          </div>
+          
+          <div>
+            <label for="subject" class="block text-sm font-medium text-gray-900 mb-2">
+              Asunto *
+            </label>
+            <select 
+              id="subject" 
+              name="subject" 
+              required 
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+            >
+              <option value="">Selecciona un tema</option>
+              <option value="proyecto">Nuevo proyecto</option>
+              <option value="colaboracion">Colaboración</option>
+              <option value="consultoria">Consultoría</option>
+              <option value="Soporte tecnico">Soporte técnico</option>
+              <option value="otro">Otro</option>
+            </select>
+            <span class="error-message text-red-500 text-sm hidden"></span>
+          </div>
+          
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-900 mb-2">
+              Mensaje *
+            </label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="5" 
+              required 
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none"
+              placeholder="Cuéntame sobre tu proyecto o idea..."
+            ></textarea>
+            <span class="error-message text-red-500 text-sm hidden"></span>
+          </div>
+          
+          <button 
+            type="submit" 
+            class="w-full bg-primary-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <span class="submit-text">Enviar mensaje</span>
+            <span class="loading-text hidden">Enviando...</span>
+          </button>
+        </form>
+        
+        <!-- Success Message -->
+        <div id="success-message" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+          <div class="flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            ¡Gracias por tu mensaje! Ha sido enviado correctamente y recibirás respuesta pronto en tu correo electrónico.
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="animate-on-scroll lg:pl-8">
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">Otras formas de contacto</h3>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Email directo</h4>
+                <p class="text-gray-600 mt-1">joaquinlozano9412@gmail.com</p>
+                <p class="text-sm text-gray-500 mt-1">Respondo en menos de 24 horas</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                <svg class="w-6 h-6 text-secondary-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">LinkedIn</h4>
+                <p class="text-gray-600 mt-1">linkedin.com/in/joaquin-lozano-a64343274</p>
+                <p class="text-sm text-gray-500 mt-1">Conectemos profesionalmente</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                <svg class="w-6 h-6 text-accent-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900">GitHub</h4>
+                <p class="text-gray-600 mt-1">github.com/JoakoLozano85</p>
+                <p class="text-sm text-gray-500 mt-1">Revisa mi código</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Response Time -->
+          <div class="mt-8 p-4 bg-white rounded-lg border-l-4 border-primary-500">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-primary-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span class="font-medium text-gray-900">Tiempo de respuesta: 24 horas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successMessage = document.getElementById('success-message');
+
+  form?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    try {
+      const response = await fetch('https://formspree.io/f/xzzeykeo', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
+      if (response.ok) {
+        form.reset();
+        successMessage.classList.remove('hidden');
+        setTimeout(() => {
+          successMessage.classList.add('hidden');
+        }, 5000);
+      } else {
+        alert('Hubo un error al enviar el mensaje. Intenta nuevamente.');
+      }
+    } catch (error) {
+      alert('Hubo un error al enviar el mensaje. Intenta nuevamente.');
+    }
+  });
+});
+</script>

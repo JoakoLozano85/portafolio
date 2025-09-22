@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import About from '../components/About.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Sobre mí - Tu Nombre" 
+  description="Conoce más sobre mi experiencia como desarrollador Full Stack. Mi trayectoria, habilidades técnicas y pasión por el desarrollo web."
+>
+  <Header />
+  <main class="pt-24">
+    <!-- Page Header -->
+    <section class="py-16 bg-gradient-to-br from-gray-50 to-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="animate-on-scroll">
+          <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Sobre <span class="text-primary-600">mí</span>
+          </h1>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Desarrollador apasionado por crear soluciones web innovadoras y experiencias de usuario excepcionales.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Content -->
+    <About />
+    
+    <!-- Experience Timeline -->
+    <section class="py-16 lg:py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 animate-on-scroll">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Mi trayectoria</h2>
+          <p class="text-xl text-gray-600">Un recorrido por mi experiencia profesional y educativa</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Educación -->
+          <div>
+            <h3 class="text-2xl font-bold text-primary-600 mb-4">Educación</h3>
+            <div class="space-y-6">
+              <div>
+                <div class="font-semibold text-gray-900">Análisis y Desarrollo de Sistemas de Información</div>
+                <div class="text-sm text-gray-600">Servicio Nacional de Aprendizaje (SENA)</div>
+                <div class="text-xs text-gray-500 mb-2">2014 - 2017</div>
+                <p class="text-gray-600 text-sm">Tecnólogo en Análisis y Desarrollo de Sistemas de Información Profesional con conocimientos en programación y diseño de aplicaciones. Experiencia en el desarrollo de soluciones tecnológicas y habilidades básicas en sistemas informáticos. Capaz de trabajar en equipo, con un enfoque en la optimización de procesos y el uso eficiente de herramientas tecnológicas para resolver problemas.</p>
+              </div>
+              <div>
+                <div class="font-semibold text-gray-900">Ingeniería de Sistemas</div>
+                <div class="text-sm text-gray-600">Universidad de Pamplona</div>
+                <div class="text-xs text-gray-500 mb-2">2018 (Aplazado)</div>
+                <p class="text-gray-600 text-sm">Estudios en Ingeniería de Sistemas (hasta 8vo semestre) Formación sólida en análisis, diseño y desarrollo de sistemas informáticos. Amplio conocimiento en programación, bases de datos, redes y metodologías de desarrollo de software. Experiencia en la aplicación de técnicas y herramientas para la resolución de problemas complejos en el ámbito de la ingeniería de software.</p>
+              </div>
+              <div>
+                <div class="font-semibold text-gray-900">Técnico en Documentación y Registro de Operaciones Contables</div>
+                <div class="text-sm text-gray-600">Servicio Nacional de Aprendizaje (SENA)</div>
+                <div class="text-xs text-gray-500 mb-2">2011</div>
+                <p class="text-gray-600 text-sm">Técnico en Documentación y Registro de Operaciones Contables Capacitado en la gestión y registro de operaciones contables, con conocimientos en documentación financiera, procesamiento de datos contables y manejo de herramientas contables. Experiencia en el control y seguimiento de registros financieros, asegurando precisión y cumplimiento de normativas contables.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Experiencia de trabajo -->
+          <div>
+            <h3 class="text-2xl font-bold text-secondary-600 mb-4">Experiencia de trabajo</h3>
+            <div class="space-y-6">
+              <div>
+                <div class="font-semibold text-gray-900">Soporte técnico</div>
+                <div class="text-sm text-gray-600">JMG SOLUCIONES S.A.S</div>
+                <div class="text-xs text-gray-500 mb-2">2016 - 2017</div>
+                <p class="text-gray-600 text-sm">Experiencia como practicante de 6 meses en soporte técnico, incluyendo reparaciones, mantenimiento de equipos de cómputo y resolución de problemas técnicos. Como analista de sistemas. Además, cuento con habilidades en el diseño y desarrollo de aplicaciones web, utilizando diversas tecnologías y lenguajes de programación para crear interfaces intuitivas y funcionales.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section class="py-16 bg-gradient-to-r from-primary-600 to-secondary-600">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="animate-on-scroll">
+          <h2 class="text-3xl font-bold text-white mb-4">¿Trabajemos juntos?</h2>
+          <p class="text-xl text-primary-100 mb-8">
+            Estoy siempre abierto a nuevos proyectos y colaboraciones interesantes.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="/contacto" 
+              class="inline-flex items-center px-8 py-4 bg-white text-primary-600 rounded-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 shadow-lg"
+            >
+              Contáctame
+              <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a 
+              href="/proyectos" 
+              class="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-all duration-200"
+            >
+              Ver proyectos
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
